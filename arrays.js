@@ -71,7 +71,7 @@ let inventory = [
            }
        }
     
-   console.log("We have ", mazdaCars.length,  "Mazda Cars")
+     console.log("We have ", mazdaCars.length,  "Mazda Cars")
 
   
   // ==== Challenge 1 ====
