@@ -10,15 +10,32 @@ Do the following:
 */
 
 
+function convertStringToNumber() {
+      const str = "1999";  
+      const num = parseInt(str);
+      return num;
+ }
+ 
+ console.log(convertStringToNumber()); 
+
+
 /*
 Task: Mood Checker
 
 Do the following:   
    1. Write a script that prompts the user for their current mood. / Code qor u soo saaraayo qof meeshuu ku qori lahaa siduu dareemaayo
    2. If the user inputs happy, print 'Yay me too!' to the console, sad print 'Aw cheer up', / Haduu qofka galiyo 'happy', console log samee ah 'Yay me too', haduu 'sad' galiyo, 'Aw Cheer up' console ku qor.
-   3. Else just print 'So moody!' / Hadii kale 'So Moody!' soo saar.
+   3. Else just print 'So moody!' / Hadii kale 'So Moody!' soo saar.*/
 
-*/
+
+ const mood = prompt("How are you feeling today?");
+   if (mood === "happy") {
+   console.log("Yay me too!");
+   } else if (mood === "sad") {
+   console.log("Aw cheer up!");
+   } else {
+   console.log("So moody!");
+   }
 
 
 /*
@@ -26,16 +43,21 @@ Task: Odd or Even / kisi ama dhaban
 
 Use conditionals to check if a hardcoded number is odd or even, and then console.log the number is odd or even with the numbers value.
 
-Adigoo 'if/else' isticmaalaayo hubi in nambar uu yahay 'kisi ama dhaban', kadi console log ku samee adigoo sheegaayo midkuu yahay
+Adigoo 'if/else' isticmaalaayo hubi in nambar uu yahay 'kisi ama dhaban', kadib console log ku samee adigoo sheegaayo midkuu yahay
 
 */
 
-var num = 16; // You can change this number! / Number-kaan ku bilow
+/*var num = 16; // You can change this number! / Number-kaan ku bilow
+  write your conditions here / Code-kaada halkaan ku qor */
 
-// write your conditions here / Code-kaada halkaan ku qor
+ var num = 32; 
 
+ if (num % 2 === 0) {
+   console.log(num + " is even.");
+ } else {
+   console.log(num + " is odd.");
 
-
+ }
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task: FIZZBUZZ 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -81,17 +103,49 @@ Waa labo, haduu 6 loo qaybiyo 4, lao ayaa soo haraayo.
 
 Knowing this should help you complete this assignment without any issue. Xarafkaa "%" wuxuu kaa cawinayaa inaa haraaga hesho, asaga u isticmaal inaa
 ogaato in number ay isku qaybsamaan.
+*/
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}
 
 
-Extra Credit:
+/*Extra Credit:
 
 Instead of only printing "fizz", "buzz", and "fizzbuzz", add a fourth print statement: "prime". 
 You should print this whenever you encounter a number that is prime (divisible only by itself and one).
 As you implement this, don't worry about the efficiency of the algorithm you use to check for primes. 
 It's okay for it to be slow.
-
-
 */
+function isPrime(num) {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return num !== 1;
+}
+
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else if (isPrime(i)) {
+    console.log("Prime");
+  } else {
+    console.log(i);
+  }
+}
 
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
@@ -103,10 +157,4 @@ Using the vowelCounter function below do the following:
   2. Count and return the number of vowels within that string.  It should handle both capitalized and uncapitalized vowels.
 
   HINT - you may need to study next week's content on arrays 
-  HINT - try looking up the .includes() method
-*/
-
-
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
-}
+  HINT - try looking up the .includes() method */

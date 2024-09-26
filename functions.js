@@ -3,31 +3,37 @@
 // Take the commented ES5 syntax and convert it to ES6 arrow Syntax
 
 
-/*
+// ------------
+// function myFunction() {
+// console.log("Function was invoked!");
+// };
 
-------------
-function myFunction() {
-console.log("Function was invoked!");
+// myFunction();
+const myFunction = () => {
+  console.log("Function was invoked!");
 };
 
 myFunction();
-----------------
+// ----------------
 
-let anotherFunction = function (param) {
-  return param;
-};
+// let anotherFunction = function (param) {
+//   return param;
+// };
 
-anotherFunction("Example");
+// anotherFunction("Example");
+const anotherFunction = param => param;
+console.log(anotherFunction("Example"));
+// ---------------
+// zz
+// let add = function (param1, param2) {
+//   return param1 + param2;
+// };
 
----------------
+// add(1,2);
+const add = (param1, param2) => param1 + param2;
+console.log(add(1,2));
 
-let add = function (param1, param2) {
-  return param1 + param2;
-};
 
-add(1,2);
-
-*/
 
 
 
@@ -52,3 +58,41 @@ Use the game function below to do the following:
 function game(user, computer){
     /*add your code here*/
 }
+
+let computerChoice = Math.random();
+if (computerChoice < 0.35) {
+    computerChoice = "rock";
+} else if (computerChoice <= 0.67) {
+    computerChoice = "paper";
+} else {
+    computerChoice = "scissors";
+}
+
+function game(userChoice, computerChoice) {
+  if (userChoice === computerChoice) {
+    return "it's a tie";
+  } else if (userChoice === "rock") {
+    if (computerChoice === "scissors") {
+      return "you win!";
+    } else {
+      return "you lose!";
+    }
+  } else if (userChoice === "paper") {
+    if (computerChoice === "rock") {
+      return "you win!";
+    } else {
+      return "you lose!";
+    }
+  } else if (userChoice === "scissors") {
+    if (computerChoice === "paper") {
+      return "you win!";
+    } else {
+      return "you lose!";
+    }
+  }
+}
+
+let userChoice = prompt("Do you choose rock, paper or scissors?");
+console.log("User Choice: " + userChoice);
+console.log("Computer Choice: " + computerChoice);
+console.log(game(userChoice, computerChoice));
